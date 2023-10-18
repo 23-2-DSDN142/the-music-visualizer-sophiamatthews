@@ -42,7 +42,7 @@ rect(6*width/10, rectY, width/6, volume_bass);
 fill(0, 0, 200);
 rect(8*width/10, rectY, width/6, volume_other);
 
-fill(200)
+fill(0,0,0)
 textAlign(LEFT);
 // demonstrate use of non-documented "counter" variable
 let seconds = counter/60

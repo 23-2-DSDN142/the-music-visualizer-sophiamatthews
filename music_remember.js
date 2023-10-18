@@ -45,10 +45,10 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   old_loudest = loudest;
 
   // by default all bars are skinny
-  let bar_width1 = width/12;
-  let bar_width2 = width/12;
-  let bar_width3 = width/12;
-  let bar_width4 = width/12;
+  let bar_width1 = width/20;
+  let bar_width2 = width/20;
+  let bar_width3 = width/20;
+  let bar_width4 = width/20;
 
   // but make the loudest section fatter
   if(loudest == 1) {
@@ -64,7 +64,7 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
     bar_width4 = width/5;
   }
 
-  fill(200, 200, 0);
+  fill(0,0,0);
   text(words, width/2, height/3);
 
   // vocal bar is red
