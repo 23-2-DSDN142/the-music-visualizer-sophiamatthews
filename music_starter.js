@@ -1,4 +1,3 @@
-
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
   background(197, 195, 198)
@@ -6,35 +5,50 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   rectMode(CENTER)
   textSize(40);
 
-   let bar_spacing = height / 10;
-   let bar_height = width / 12;
-   let bar_pos_x = width / 2;
+  
+
+   let otherHeartMap = map(other,0,100,0.2,1)
+   let vocalHeartMap = map(vocal,0,100,0.2, 1)
+   let bassHeartMap = map(bass,0,100,0.2, 1)
+   let drumHeartMap = map(bass,0,100,0.2, 1)
  
 
-   // vocal bar is purple
-   fill(205,180,219);
-   rect(bar_pos_x, height / 2 + 1 * bar_spacing, 4 * vocal, bar_height);
-   fill(0);
-   text("vocals", bar_pos_x, height / 2 + 1 * bar_spacing + 8);
- 
-   // drum bar is light green
-   fill(199, 249, 204);
-   rect(bar_pos_x, height / 2 + 2 * bar_spacing, 4 * drum, bar_height);
-   fill(0);
-   text("drums", bar_pos_x, height / 2 + 2 * bar_spacing + 8);
- 
-   // bass bar is pink
-   fill(255,175,204);
-   rect(bar_pos_x, height / 2 + 3 * bar_spacing, 4 * bass, bar_height);
-   fill(0);
-   text("bass", bar_pos_x, height / 2 + 3 * bar_spacing + 8);
- 
-   // other bar is light blue
-   fill(189,224,254);
-   rect(bar_pos_x, height / 2 + 4 * bar_spacing, 4 * other, bar_height);
-   fill(0);
-   text("other", bar_pos_x, height / 2 + 4 * bar_spacing + 8);
-   fill(255, 255, 0);
+   
+
+  //heart other
+  push();
+  fill(184,190,221);
+  stroke(255, 255, 255);
+  strokeWeight(15);
+  heart(width/1.3, 3 * height / 4, otherHeartMap, 45);
+  pop();
+  //heart other end
+
+  //heart vocal
+  push();
+  fill(239,195,230);
+  stroke(255, 255, 255);
+  strokeWeight(15);
+  heart(width/4, 3 * height / 4, vocalHeartMap, -45);
+  pop();
+
+  //heart bass
+  push();
+  fill(196, 144, 209);
+  stroke(255, 255, 255);
+  strokeWeight(15);
+  heart(width/4, 1.5 * height / 5, bassHeartMap, -45);
+  pop();
+
+   //heart drum
+   push();
+   fill(255, 246, 137);
+   stroke(255, 255, 255);
+   strokeWeight(15);
+   heart(width/1.3, 1.5 * height / 5, drumHeartMap, 45);
+   pop();
+
+   
  
    // display "words"
    textAlign(CENTER);
@@ -42,3 +56,35 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    text(words, width/2, height/3);
    fill(0,0,0);
 }
+
+//function for hearts
+function heart(x, y, otherHeartMap, heartRotate){ //rotation, scale
+  
+  push();
+  translate(x, y);
+  scale (otherHeartMap);
+  rotate(heartRotate);
+  // scale(1);
+
+//left half of heart
+  beginShape();
+  curveVertex(1, -125);
+  curveVertex(1, -125);//top of heart
+  curveVertex(-100, -175);
+  curveVertex(-200, -75);
+  curveVertex(1, 175);//bottom point of heart
+curveVertex(1, 175);
+endShape();
+
+//right half of heart
+beginShape();
+curveVertex(-1, -125);
+curveVertex(-1, -125);//top of heart
+curveVertex(100, -175);
+curveVertex(200, -75);
+curveVertex(-1, 175);//bottom point of heart
+curveVertex(-1, 175);
+endShape();
+pop();
+}
+

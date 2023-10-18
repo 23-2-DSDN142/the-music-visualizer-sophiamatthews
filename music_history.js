@@ -70,7 +70,7 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
 
   // big yellow words on top
   noStroke();
-  fill(255, 255, 0);
+  fill(255, 0, 0);
   draw_history_words(words_history);    
 }
 
