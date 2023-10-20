@@ -24,7 +24,6 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
     triangle(cur_x, cur_y, mid_x, cur_y - triangleHeight, next_x, cur_y);
   }
 
-
   let drumSize = map(drum, 30, 100, 30, 300, true);
   fill(90,61,43); // brown
   rect(0, 0, drumSize, drumSize);
@@ -54,6 +53,6 @@ function draw_one_frame(words, vocal, drum, bass, other,counter) {
   textStyle(BOLD);
   textSize(80);
   noStroke();
-  fill(0, 0, 0, int(last_words_opacity));
+  fill(0, 255, 0, int(last_words_opacity));
   text(words, width/2, height/2);
 }

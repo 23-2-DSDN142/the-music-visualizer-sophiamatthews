@@ -4,7 +4,7 @@ let wordBrightness = 255;
 let yOffset = 0;
 
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-background(0);
+background(255,0,0);
 rectMode(CENTER);
 textAlign(CENTER);
 textFont('Helvetica'); // please use CSS safe fonts
@@ -29,7 +29,6 @@ let volume_vocal = map(vocal, 0, 100, 0, 0.7 * height, true);
 let volume_drum  = map(drum, 0, 100, 0, 0.7 * height, true);
 let volume_bass  = map(bass, 0, 100, 0, 0.7 * height, true);
 let volume_other = map(other, 0, 100, 0, 0.7 * height, true);
-
 
 rectMode(CENTER);
 let rectY = height/3 *2
